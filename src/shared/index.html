@@ -1,13 +1,18 @@
 <% layout('_layout.html') %>
 
 <header>
-  <h1>Supersonic</h1>
+  <h1 class="mx-4 my-8 text-center text-3xl text-green-300">Supersonic</h1>
 </header>
 <main>
   <section>
-    TODO: Add Assets
+    <div class="px-4 flex">
+      <label>Add Asset to Watch List:</label>
+      <input name="asset" class="w-full mx-2 border-2 border-gray-200 round px-2 py-2" type="text" />
+      <button hx-post="/add" hx-target="#prices" hx-include="[name='asset']"
+        class="border-2 border-gray-200 rounded-lg px-2 bg-gray-600 text-white focus:outline-none hover:bg-white hover:text-black">Add</button>
+    </div>
   </section>
-  <section>
-    TODO: List Assets
+  <section id="prices">
+    <%~ include('prices', it) %>
   </section>
 </main>

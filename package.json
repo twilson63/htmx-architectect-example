@@ -8,5 +8,10 @@
   "devDependencies": {
     "@architect/architect": "^8.5.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@architect/functions": "^3.13.11",
+    "aws-sdk": "^2.888.0",
+    "eta": "^1.12.1",
+    "node-fetch": "^2.6.1"
+  }
 }
