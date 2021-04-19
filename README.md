@@ -24,3 +24,53 @@ a declarative way.
 > NOTE: each function is a separate application in a sense, so when using dependencies, if you intend to share
 them you will need to setup a shared directory, to place all of your shared code.
 
+## Requirements
+
+* NodeJS
+* AWS CLI
+* https://coinapi.io - Register to get free API key
+* @architect/architect and aws-sdk
+
+## Setup
+
+``` sh
+arc init
+```
+
+Modify the `app.arc` file
+
+```
+
+@http
+get /
+post /add
+
+```
+
+``` sh
+arc init
+```
+
+Create some directories
+
+``` sh
+mkdir public src/shared
+```
+
+Add tailwind to `/public` directory
+
+```
+npx tailwindcss-cli@latest build -o public/tailwind.css
+```
+
+Add some dependencies
+
+```
+npm i node-fetch eta @architect/functions aws-sdk
+```
+
+> NOTE: Set env variable for coinAPI key
+
+```
+arc env testing KEY YOUR_API_KEY
+```

@@ -7,8 +7,8 @@
   <section>
     <div class="px-4 flex">
       <label>Add Asset to Watch List:</label>
-      <input name="asset" class="w-full mx-2 border-2 border-gray-200 round px-2 py-2" type="text" />
-      <button hx-post="/add" hx-target="#prices" hx-include="[name='asset']"
+      <input id="asset" name="asset" class="w-full mx-2 border-2 border-gray-200 round px-2 py-2" type="text" />
+      <button _="on click put '' into #asset.value" hx-post="/add" hx-target="#prices" hx-include="[name='asset']"
         class="border-2 border-gray-200 rounded-lg px-2 bg-gray-600 text-white focus:outline-none hover:bg-white hover:text-black">Add</button>
     </div>
   </section>
