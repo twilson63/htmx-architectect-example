@@ -1,0 +1,12 @@
+{
+  "name": "htmx-architectect-example",
+  "version": "0.0.0",
+  "description": "A fresh new Architect project!",
+  "scripts": {
+    "start": "npx sandbox"
+  },
+  "devDependencies": {
+    "@architect/architect": "^8.5.4"
+  },
+  "dependencies": {}
+}
