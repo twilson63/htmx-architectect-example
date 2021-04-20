@@ -1,6 +1,9 @@
 // learn more about HTTP functions here: https://arc.codes/primitives/http
 let template = require('@architect/shared/template')
 let assets = require('@architect/shared/assets')
+let config = require('@architect/shared/config')
+let dal = require('@architect/shared/dal')
+
 const qs = require('querystring')
 const toData = body => [body]
   .map(v => Buffer.from(v, 'base64').toString())
@@ -9,7 +12,10 @@ const toData = body => [body]
 
 exports.handler = async function http(req) {
   const asset = toData(req.body).asset
-  const prices = await assets(['BTC', 'ETH', 'BAT', asset])
+  const result = await dal(config).add('supersonic', asset)
+  const list = await dal(config).list('supersonic')
+  const prices = await assets(list)
+
   return {
     statusCode: 200,
     headers: {

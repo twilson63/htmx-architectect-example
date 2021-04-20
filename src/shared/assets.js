@@ -7,7 +7,7 @@ module.exports = assets => fetch(url(assets), {
     'X-CoinAPI-key': process.env.KEY
   }
 }).then(r => r.json())
-  .then(v => (console.log(v), v))
+  //.then(v => (console.log(v), v))
   .then(results => results.map(
     a => ({ symbol: a.asset_id, value: new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(a.price_usd) })
   ))
